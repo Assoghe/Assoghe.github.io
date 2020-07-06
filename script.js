@@ -1,25 +1,58 @@
-$("#contactForm").submit(function(event){
-    // cancels the form submission
-    event.preventDefault();
-    submitForm();
-});
-function submitForm(){
-    // Initiate Variables With Form Content
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var message = $("#message").val();
- 
-    $.ajax({
-        type: "POST",
-        url: "php/form-process.php",
-        data: "name=" + name + "&email=" + email + "&message=" + message,
-        success : function(text){
-            if (text == "success"){
-                formSuccess();
-            }
-        }
-    });
-}
-function formSuccess(){
-    $( "#msgSubmit" ).removeClass( "hidden" );
-}
+function contactForm() {
+
+		var scrollElement = $('html,body');
+		var	contactForm = $('.contact-form');
+		var	form_msg_timeout;
+
+		contactForm.on( 'submit', function() {
+
+			var requiredFields = $(this).find('.required');
+			var	formFields = $(this).find('input, textarea');
+			var	formData = contactForm.serialize();
+			var	formAction = $(this).attr('action');
+			var	formSubmitMessage = $('.response-message');
+
+			requiredFields.each(function() {
+
+				if( $(this).val() == "" ) {
+					$(this).addClass('input-error');
+				} else {
+					$(this).removeClass('input-error');
+				}
+
+			});
+
+			function validateEmail(email) { 
+				var exp = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				return exp.test(email);
+			}
+
+			var emailField = $('.contact-form-email');
+
+			if( !validateEmail(emailField.val()) ) {
+				emailField.addClass('input-error');
+			}
+
+			if ($('.contact-form :input').hasClass('input-error')) {
+				return false;
+			} else {
+			
+				clearTimeout(form_msg_timeout);
+				
+				$.post(formAction, formData, function(data) {
+					formSubmitMessage.text(data);
+
+					formFields.val('');
+
+					form_msg_timeout = setTimeout(function() {
+						formSubmitMessage.slideUp();
+					}, 5000);
+				});
+
+			}
+
+			return false;
+
+		});
+
+	};
