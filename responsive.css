@@ -1,0 +1,136 @@
+@media screen and (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 45px;
+        position: absolute;
+        letter-spacing: 3px;
+    
+    }
+    .rectangle_droit{
+        height: 70px;
+    }
+
+    .rectangle_gauche {
+        max-height: 70px;
+    }
+    
+    .metiers {
+        font-size: 25px;
+    }
+
+}   
+
+@media   (max-width: 1000px) {
+    .block_container {
+        column-count: 2;
+        padding: 10px;
+    }
+
+    .about {
+        width:100%;
+        height: auto;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .contient {
+        width: 75px;
+        height: 75px;
+    }
+
+    .contient img{
+        width: 45px;
+        height: 45px;
+    }
+}
+
+
+@media   (max-width: 600px) {
+    .main {
+        column-count: 1;
+        padding: 10px;
+    }
+
+    .category_item {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 870px) {
+    label #sign-one {
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        background-color: #2897FC;
+        top: 0px;
+        left: -100%;
+        text-align: center;
+        transition: 0.5s;
+        z-index: 10;
+    }
+    nav ul li{
+       display: block;
+        margin: 40px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    #res-menu:checked ~ ul{
+        left: 0;
+    }
+    #res-menu:checked ~ label #sign-one{
+        display: none;
+    }
+    #res-menu:checked ~ label #sign-two{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 900px) {
+.contientservices p {
+    font-size: 15px;
+}
+
+label input[type="checkbox"]:checked ~ .contientservices{
+    background-color: #6297DB;
+    color: #121212;
+    height: 250px;
+    
+}
+
+.contientservices{
+    width: 150px;
+    height:175px;
+}
+
+.contientservices img{
+    width: 50px;
+    height:50px;
+}
+
+.contientservices h2{
+    font-size: 20px;
+}
+
+.containertwo {
+    margin-bottom: 45px;
+    height: auto;
+    margin-top: 45px;
+}
+
+.container {
+    height: 100%;
+    margin-bottom: 0;
+    
+}
+}   
