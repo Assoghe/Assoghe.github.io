@@ -96,41 +96,4 @@
     }
 }
 
-@media screen and (max-width: 900px) {
-.contientservices p {
-    font-size: 15px;
-}
 
-label input[type="checkbox"]:checked ~ .contientservices{
-    background-color: #6297DB;
-    color: #121212;
-    height: 250px;
-    
-}
-
-.contientservices{
-    width: 150px;
-    height:175px;
-}
-
-.contientservices img{
-    width: 50px;
-    height:50px;
-}
-
-.contientservices h2{
-    font-size: 20px;
-}
-
-.containertwo {
-    margin-bottom: 45px;
-    height: auto;
-    margin-top: 45px;
-}
-
-.container {
-    height: 100%;
-    margin-bottom: 0;
-    
-}
-}   
