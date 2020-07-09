@@ -9,11 +9,11 @@
     
     }
     .rectangle_droit{
-        height: 90px;
+        height: 70px;
     }
 
     .rectangle_gauche {
-        max-height: 90px;
+        max-height: 70px;
     }
     
     .metiers {
@@ -44,6 +44,7 @@
         height: 75px;
         text-align: center;
         justify-content: center;
+        margin: auto;
     }
 
     .contient img{
